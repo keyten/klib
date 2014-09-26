@@ -32,23 +32,23 @@ Systems
 
 ### Account system
 
-- login &lt;nick> <pass>
+- login &lt;nick> &lt;pass>
 - logout
-- register <nick> <pass> <pass>
-- *createuser <nick> <pass> <pass> [group] -- makes new user without logout.*
-- *user <user> -- shows you user info.*
-- *givepermission <user> <perm1>, <perm2>...*
+- register &lt;nick> &lt;pass> &lt;pass>
+- *createuser &lt;nick> &lt;pass> &lt;pass> [group] -- makes new user without logout.*
+- *user &lt;user> -- shows you user info.*
+- *givepermission &lt;user> &lt;perm1>, &lt;perm2>...*
 
 ***For example, user with rank "Knight" after giving permission to him, will have rank "Knight (changed)"***
 
-- *removepermission <user> <perm1>, <perm2>...*
-- *rank <groupname> <permission1>... -- makers new rank, or changes permissions of the rank*
-- *rankuser <user> <rank> -- gives rank to user*
-- *logout <user>*
-- *deluser <user>*
-- *tempuser <name|null> <player> <rank|permissions> -- makes the player (with <player> id) as a temporary user (after logout, account will deleted)*
+- *removepermission &lt;user> &lt;perm1>, &lt;perm2>...*
+- *rank &lt;groupname> &lt;permission1>... -- makers new rank, or changes permissions of the rank*
+- *rankuser &lt;user> &lt;rank> -- gives rank to user*
+- *logout &lt;user>*
+- *deluser &lt;user>*
+- *tempuser &lt;name|null> &lt;player> &lt;rank|permissions> -- makes the player (with &lt;player> id) as a temporary user (after logout, account will deleted)*
 - *users -- shows all online users*
-- *users <groupname>, <groupname2>...*
+- *users &lt;groupname>, &lt;groupname2>...*
 - *lastusers -- last logins*
 - *lastregister*
 
@@ -61,10 +61,10 @@ Systems
 ### Economic system
 *(only if cvar klib_economic 1)*
 - money -- shows your money.
-- *money <money>*
-- *money <user>*
-- *money <user> <money>*
-- grant <user> <money>
+- *money &lt;money>*
+- *money &lt;user>*
+- *money &lt;user> &lt;money>*
+- grant &lt;user> &lt;money>
 
 ### Entity system
 *Needs an Entity API in JA++*
@@ -72,49 +72,49 @@ Systems
 ### Teleports system
 - origin -- shows your origin.
 - sayorigin
-- sayorigin <user>
-- *sayorigin <x> <y> <z>*
-- *sayorigin <user> <x> <y> <z>*
+- sayorigin &lt;user>
+- *sayorigin &lt;x> &lt;y> &lt;z>*
+- *sayorigin &lt;user> &lt;x> &lt;y> &lt;z>*
 - telelast -- teleports to the last "sayorigin".
-- *tele <x> <y> <z>*
-- *tele <user -- teleports to the user*
-- *tele <user> <x> <y> <z> -- teleports the user*
+- *tele &lt;x> &lt;y> &lt;z>*
+- *tele &lt;user -- teleports to the user*
+- *tele &lt;user> &lt;x> &lt;y> &lt;z> -- teleports the user*
 - *telet -- tele target*
 
 (entity api)
 
 - *telemark -- (entity api)*
-- *maketeleport <user> <x> <y> <z> -- makes teleport about the user*
-- *maketeleport <fx> <fy> <fz> <tx> <ty> <tz> -- from; to*
+- *maketeleport &lt;user> &lt;x> &lt;y> &lt;z> -- makes teleport about the user*
+- *maketeleport &lt;fx> &lt;fy> &lt;fz> &lt;tx> &lt;ty> &lt;tz> -- from; to*
 - *onceteleport -- makes the last opened teleport to close after first using*
 - *teleports -- shows all teleports*
-- *closeteleport <id>*
+- *closeteleport &lt;id>*
 - *closeteleports*
 
 ### Messages system
 (you can send message to the offline user)
-- message <user> <message>
+- message &lt;user> &lt;message>
 - messages
-- messages <page>
+- messages &lt;page>
 - messages new
-- messages <user>
-- *msgrank <rank1,rank2> <message> -- message to the all ranked users*
+- messages &lt;user>
+- *msgrank &lt;rank1,rank2> &lt;message> -- message to the all ranked users*
 
 ### Shops system
 ### Bots system
-- *addbot <botname> <skill 1-5> <team> <delay> <altname>*
-- *makebot <botname> <skill 1-5> <team> <delay> <altname> -- saves the bot (in the next server starting, klib will add the bot)*
-- *sharebot <botname> <skill 1-5> <team> <delay> <altname> -- any user can call a shared bot*
+- *addbot &lt;botname> &lt;skill 1-5> &lt;team> &lt;delay> &lt;altname>*
+- *makebot &lt;botname> &lt;skill 1-5> &lt;team> &lt;delay> &lt;altname> -- saves the bot (in the next server starting, klib will add the bot)*
+- *sharebot &lt;botname> &lt;skill 1-5> &lt;team> &lt;delay> &lt;altname> -- any user can call a shared bot*
 - bots -- shared bots.
 - *bots -- shared and saved bots.*
-- *delbot <id>*
-- callbot <id>
+- *delbot &lt;id>*
+- callbot &lt;id>
 		
 TODO: npcs
 
 ### Statistic system
 - stats -- last ip, last visit time, kills, deaths, duels...
-- *stats <user>*
+- *stats &lt;user>*
 
 ### Bans system
 ...
@@ -126,14 +126,14 @@ TODO: npcs
 ...
 
 ### Remap system
-- *remap <shaderfrom> <shaderto>*
-- remap <name> -- applies an shared remap
+- *remap &lt;shaderfrom> &lt;shaderto>*
+- remap &lt;name> -- applies an shared remap
 - remaps
 + *remap list*
-+ *remap save <name> <shader1from>,<shader1to> ...*
-+ *remap share <name> <shader1from>,<shader1to> <shader2from>,<shader2to> ...*
++ *remap save &lt;name> &lt;shader1from>,&lt;shader1to> ...*
++ *remap share &lt;name> &lt;shader1from>,&lt;shader1to> &lt;shader2from>,&lt;shader2to> ...*
 + *remap block -- blocks shared remaps in 5 minutes.*
-+ *remap block <time>*
++ *remap block &lt;time>*
 
 ### Cheat system
 ...
